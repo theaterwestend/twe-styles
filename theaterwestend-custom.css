@@ -179,8 +179,9 @@ blockquote {
 
 /* Squarespace buttons — two separate class families:
    sqs-block-button-element  → custom button blocks added via the editor
-   sqs-button-element        → system buttons (event list, built-in CTAs) */
-.sqs-block-button-element,
+   sqs-button-element        → system buttons (event list, built-in CTAs)
+   :not() guards below prevent secondary/tertiary from inheriting primary styles. */
+.sqs-block-button-element:not(.sqs-button-element--secondary):not(.sqs-button-element--tertiary),
 .sqs-block-button-element--primary,
 .sqs-button-element--primary {
   font-family: 'Proxima-Nova' !important;
@@ -197,7 +198,7 @@ blockquote {
   transition: background 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
 }
 
-.sqs-block-button-element:hover,
+.sqs-block-button-element:not(.sqs-button-element--secondary):not(.sqs-button-element--tertiary):hover,
 .sqs-block-button-element--primary:hover,
 .sqs-button-element--primary:hover {
   background: #FFF28A !important;
@@ -207,29 +208,32 @@ blockquote {
 .sqs-block-button-element--secondary,
 .sqs-button-element--secondary {
   font-family: 'Proxima-Nova' !important;
-  font-weight: 600 !important;
-  font-size: 13px !important;
+  font-weight: 900 !important;
+  font-size: 11px !important;
   letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
+  opacity: 0.75;
   background: rgba(38, 40, 42, 0.45) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   color: #F5EFE6 !important;
   border: 1px solid rgba(245, 239, 230, 0.55) !important;
   border-radius: 999px !important;
-  padding: 14px 28px !important;
+  padding: 10px 28px !important;
   cursor: pointer;
-  transition: border-color 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
-              color 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+  transition: background 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              border-color 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              opacity 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
 }
 
 .sqs-block-button-element--secondary:hover,
 .sqs-button-element--secondary:hover {
-  border-color: rgba(245, 239, 230, 0.9) !important;
-  color: #FFFFFF !important;
+  background: rgba(20, 22, 24, 0.65) !important;
+  border-color: rgba(245, 239, 230, 0.8) !important;
+  opacity: 1 !important;
 }
 
-/* Tertiary — gold text link, de-emphasized vs. pill buttons */
+/* Tertiary — gold text link with external-link icon, de-emphasized vs. pill buttons */
 .sqs-button-element--tertiary {
   font-family: 'Proxima-Nova' !important;
   font-weight: 600 !important;
@@ -248,9 +252,29 @@ blockquote {
               border-color 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
 }
 
+/* External-link icon (Lucide style, gold stroke) appended after label text */
+.sqs-button-element--tertiary::after {
+  content: '';
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  margin-left: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23FFE900' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 140ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
 .sqs-button-element--tertiary:hover {
   color: #FFF28A !important;
   border-color: #FFF28A !important;
+}
+
+.sqs-button-element--tertiary:hover::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%23FFF28A' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpolyline points='15 3 21 3 21 9'/%3E%3Cline x1='10' y1='14' x2='21' y2='3'/%3E%3C/svg%3E");
 }
 
 
