@@ -1,0 +1,608 @@
+/* ============================================================
+   THEATER WEST END — CUSTOM CSS
+   theaterwestend.com (Squarespace)
+   Last reviewed: May 2026
+   ============================================================
+   Sections:
+    1. Fonts
+    2. Base Typography
+    3. Navigation
+    4. Event Pages
+    5. Show Listings / Menu
+    6. Gallery & Captions
+    7. Summary Blocks
+    8. Quote Blocks
+    9. User Item Lists
+   10. Announcement Bar
+   11. Floating Button
+   12. Utilities
+   ============================================================ */
+
+
+/* ============================================================
+   1. FONTS
+   ============================================================ */
+
+/* Eighties Comeback — primary display font family for titles/headings */
+@font-face {
+  font-family: 'Eighties-CondBold';
+  src: url('https://static1.squarespace.com/static/5aa9f6ae5ffd209c73921f72/t/67285416c51bcd00c95690df/1730696214110/EightiesComeback-BoldCond.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eighties-Cond';
+  src: url('https://static1.squarespace.com/static/5aa9f6ae5ffd209c73921f72/t/6728587a594fb84597c4e9b2/1730697338990/EightiesComeback-Condensed.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Eighties-Light-X';
+  src: url('https://static1.squarespace.com/static/5aa9f6ae5ffd209c73921f72/t/67286e6a554ebb7263ca8d2b/1730702954301/EightiesComebackIt-LtXCn.otf') format('opentype');
+  font-display: swap;
+}
+
+/* Sydney — accent font, used inline via <em> and <code> tags in the editor */
+@font-face {
+  font-family: 'Sydney';
+  src: url('https://static1.squarespace.com/static/5aa9f6ae5ffd209c73921f72/t/67285922c8e989794e8d44ff/1730697506346/SydneyAlternate-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+
+/* ============================================================
+   2. BASE TYPOGRAPHY
+   ============================================================ */
+
+p {
+  font-family: 'Eighties-Cond' !important;
+}
+
+p strong {
+  font-family: 'Eighties-CondBold' !important;
+  letter-spacing: 0px;
+}
+
+/* NOTE: <em> inside paragraphs is intentionally repurposed as a Sydney
+   font switcher in the Squarespace editor. font-style: normal is deliberate —
+   this is not a bug. To use: italicize text in the editor to switch to Sydney. */
+p em {
+  font-family: 'Sydney' !important;
+  font-size: 1.2em !important;
+  word-spacing: -8px;
+  text-transform: lowercase !important;
+  font-style: normal;
+}
+
+/* NOTE: <code> tags are intentionally repurposed as a Sydney display-font
+   switcher in the Squarespace editor. Avoid adding real code snippets to the
+   site — they will render as large decorative text instead. */
+code {
+  font-family: 'Sydney' !important;
+  font-size: 1.7em !important;
+  word-spacing: -8px;
+  text-transform: capitalize !important;
+}
+
+h2 {
+  font-family: 'Eighties-Light-X';
+  font-weight: 100 !important;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-size: 2.5em;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+h2 em {
+  font-family: 'Sydney' !important;
+  font-weight: 100 !important;
+  word-spacing: -28px !important;
+  text-transform: lowercase !important;
+  font-style: normal;
+}
+
+/* Previously defined twice with conflicting values — merged here.
+   color: #babfc0 wins (was in second rule). text-transform: uppercase
+   restored from original first rule — intentional for label-style headings. */
+h4 {
+  color: #babfc0;
+  font-size: .7em;
+  text-transform: uppercase;
+}
+
+blockquote {
+  display: grid;
+  font-size: .7em;
+  letter-spacing: .5px;
+  border-left: none;
+  background-color: #26282a;
+  border-radius: 10px;
+  padding: 0.4em 1em 0em 2em;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+}
+
+
+/* ============================================================
+   3. NAVIGATION
+   ============================================================ */
+
+.header-nav-list > div {
+  font-family: 'Proxima-Nova' !important;
+  font-size: .7em;
+  text-transform: uppercase;
+  letter-spacing: 4px !important;
+}
+
+/* Dropdown folder menus */
+.header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content {
+  letter-spacing: 1px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-top: 0px;
+  border-radius: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* was 2s — too slow for a nav dropdown */
+  background-color: rgba(0, 0, 0, 0.2); /* 20% dark overlay */
+  backdrop-filter: blur(5px);
+}
+
+.header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content {
+  max-height: 500px;
+}
+
+/* Mobile / hamburger menu */
+.header-menu-nav-item a {
+  font-family: 'Proxima-Nova' !important;
+  color: white !important;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 5px;
+  padding-left: 30px;
+  font-size: 1em;
+  line-height: initial;
+}
+
+.site-wrapper .header-menu .header-menu-bg {
+  background-color: #26282A;
+}
+
+
+/* ============================================================
+   4. EVENT PAGES
+   ============================================================ */
+
+/* Event list (index / calendar view) */
+.eventlist-meta-item {
+  font-family: 'Proxima-Nova' !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .7em;
+}
+
+/* Hide the repeated meta detail row on event listings */
+.eventitem-meta-item {
+  display: none;
+}
+
+.eventitem-meta {
+  font-size: .9em !important;
+}
+
+/* Event detail page title */
+.eventitem-title {
+  font-family: 'Eighties-Light-X';
+  font-weight: 100;
+  text-transform: none;
+  letter-spacing: 0px;
+  line-height: .9 !important;
+  font-size: 2.2em !important;
+}
+
+/* "Next / Previous" event pagination */
+.item-pagination-title {
+  font-size: .7em !important;
+}
+
+.events-item-pagination-date {
+  font-family: 'Eighties-CondBold' !important;
+  font-size: .8em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 0rem !important;
+  color: #039cda !important;
+}
+
+.eventitem-backlink {
+  font-family: 'Proxima-Nova' !important;
+  text-transform: uppercase;
+  font-size: .7em;
+  letter-spacing: 2px;
+}
+
+.eventitem-backlink:before {
+  width: 1.5em;
+}
+
+
+/* ============================================================
+   5. SHOW LISTINGS / MENU
+   ============================================================ */
+
+.menu-block .menu-item {
+  margin-bottom: 0;
+  padding-bottom: 1.3em;
+  margin-top: 0;
+}
+
+.menu-item-title {
+  font-weight: 600;
+}
+
+.menu-item-description {
+  font-family: 'Proxima-Nova' !important;
+  color: #7c8588 !important;
+  font-weight: 100;
+  font-size: .7em !important;
+}
+
+/* Show status badge (top-right of each listing) */
+.menu-block .menu-item-price-top {
+  font-family: 'Eighties-CondBold';
+  font-size: .7em !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #F0DB5B; /* default / upcoming */
+}
+
+.menu-block .menu-item-price-top.available {
+  color: #4FF08D !important; /* on sale */
+}
+
+.menu-block .menu-item-price-top.soldout {
+  color: #ED665C !important; /* sold out */
+}
+
+
+/* ============================================================
+   6. GALLERY & CAPTIONS
+   ============================================================ */
+
+/* Rounded corners — 10px on standard thumbnails */
+.sqs-block-summary-v2 .summary-thumbnail-container img,
+.gallery-grid-item img,
+.gallery-strips-item img,
+.eventlist-column-thumbnail img {
+  border-radius: 10px;
+}
+
+/* Rounded corners — 15px on gallery block slides and list item media */
+.sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
+.user-items-list-simple .list-item-media-inner:not([data-aspect-ratio="original"]) .list-image {
+  border-radius: 15px;
+}
+
+/* Rounded corners — 20px on event detail header image */
+.eventitem-column-content img {
+  border-radius: 20px;
+}
+
+/* Gallery strip captions — formatted as two halves split by "|" character.
+   Left side (.before-pipe) = blue/bold label; right side (.after-pipe) = light text.
+   Requires custom JavaScript to split the caption text and wrap each half. */
+.gallery-section .gallery-caption {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.gallery-section .gallery-caption p {
+  font-family: 'Proxima-Nova' !important;
+  font-size: .6em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  max-width: 2000px !important;
+}
+
+.gallery-section .gallery-caption p .before-pipe {
+  color: #039cda;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.gallery-section .gallery-caption p .after-pipe {
+  color: #def5fe;
+  font-weight: 500 !important;
+  letter-spacing: -.3px;
+}
+
+/* Standard inline image captions */
+.image-caption p {
+  font-family: 'Proxima-Nova' !important;
+  text-transform: uppercase;
+  font-size: .7em !important;
+  text-align: center;
+  color: #BABFC0;
+}
+
+
+/* ============================================================
+   7. SUMMARY BLOCKS
+   ============================================================ */
+
+.summary-header-text {
+  font-family: 'Proxima-Nova';
+  font-size: 1.1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #babfc0 !important;
+}
+
+
+/* ============================================================
+   8. QUOTE BLOCKS
+   ============================================================ */
+
+/* Generic blockquote — dark card style (base rule is in Section 2) */
+
+/* Squarespace Quote Block — gold gradient style */
+.sqs-block-quote {
+  position: relative;
+}
+
+.sqs-block-quote blockquote {
+  font-family: 'Eighties-Light-X';
+  font-weight: 100 !important;
+  text-transform: none;
+  letter-spacing: 0px;
+  line-height: 1em;
+  font-size: 1.6em;
+  padding: .8em 2em .8em 1em;
+  border-radius: 20px;
+  border: 1px solid #FFE900;
+  color: #5a4a00;
+  background: linear-gradient(
+    135deg,
+    #FFE900 0%,
+    #e6d200 45%,
+    #b89b00 85%,
+    #5a4a00 100%
+  );
+}
+
+/* Hide Squarespace's auto-inserted opening/closing quote characters */
+.sqs-block-quote blockquote span:first-child,
+.sqs-block-quote blockquote span:last-child {
+  display: none;
+}
+
+/* Large decorative quotation mark (CSS-generated, positioned top-right) */
+.sqs-block-quote::after {
+  content: "\201C";
+  font-family: 'Proxima-Nova' !important;
+  position: absolute;
+  top: -20px;
+  right: 22px;
+  font-size: 220px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+}
+
+.sqs-block-quote .source {
+  font-family: 'Proxima-Nova' !important;
+  text-transform: uppercase;
+  font-size: .5em;
+  font-weight: 600;
+  letter-spacing: 3px !important;
+  text-align: right;
+  margin-top: 20px;
+  padding-right: 1.5em;
+  color: #FFE900;
+}
+
+
+/* ============================================================
+   9. USER ITEM LISTS
+   ============================================================ */
+
+.user-items-list .list-section-title p {
+  font-family: 'Proxima-Nova' !important;
+  letter-spacing: 4px;
+  font-size: 1em !important;
+}
+
+/* Section titles use <u> as a smaller label — underline is hidden */
+.user-items-list .list-section-title u {
+  font-size: .5em !important;
+  text-decoration: none;
+}
+
+/* Item description <u> repurposed as a styled tag/label chip */
+.list-item-content__description u {
+  font-size: 0.8em;
+  font-family: 'Proxima-Nova' !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #31A1AB;
+  letter-spacing: 4px;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Remove the <br> Squarespace injects after the <u> label */
+.list-item-content__description u + br {
+  display: none;
+}
+
+
+/* ============================================================
+   10. ANNOUNCEMENT BAR
+   ============================================================ */
+
+.sqs-announcement-bar {
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    120deg,
+    #4B2D82 0%,   /* deep violet */
+    #9B3A5E 35%,  /* dusty rose */
+    #2D6B4A 65%,  /* sage green */
+    #8B6220 100%  /* amber */
+  );
+  background-size: 300% 300%;
+  animation: redDrift 18s ease-in-out infinite;
+}
+
+/* Sparkle shimmer overlay */
+.sqs-announcement-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    120deg,
+    rgba(255,255,255,0.0) 0%,
+    rgba(255,255,255,0.0) 42%,
+    rgba(255,255,255,0.35) 45%,
+    rgba(255,255,255,0.0) 48%,
+    rgba(255,255,255,0.0) 100%
+  );
+  background-size: 200% 200%;
+  animation: sparkleSweep 5s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+@keyframes redDrift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes sparkleSweep {
+  0%   { background-position: -150% 50%; }
+  100% { background-position: 150% 50%; }
+}
+
+.sqs-announcement-bar-text,
+.sqs-announcement-bar-text p {
+  color: white;
+  font-size: .8em;
+  font-family: 'Proxima-Nova', sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.sqs-announcement-bar-text strong {
+  font-family: 'Proxima-Nova', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sqs-announcement-bar-close {
+  color: white;
+}
+
+
+/* ============================================================
+   11. FLOATING BUTTON (fixed bottom CTA bar)
+   ============================================================ */
+
+@keyframes twe-float-in {
+  to { transform: translateY(0); }
+}
+
+#floating-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* was 9999999 — no competing layers require that */
+  text-align: center;
+  transform: translateY(100%);
+  animation: twe-float-in 0.5s ease 0.8s forwards;
+  box-shadow: 0px -6px 50px rgba(0, 0, 0, 0.1);
+}
+
+#floating-button a {
+  background: #FFE900;
+  color: #44494B;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  font-family: 'Proxima-Nova' !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.4em;
+  border-radius: 0;
+  line-height: 0.7;
+  display: block;
+  width: 100%;
+  padding: 18px 0;
+  text-align: center;
+  position: relative;
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#floating-button .floating-button-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: 0.7em;
+  letter-spacing: 0;
+  color: #44494B;
+  text-transform: uppercase;
+  display: block;
+  line-height: .9;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
+
+
+/* ============================================================
+   12. UTILITIES
+   ============================================================ */
+
+/* Countdown widget — used in show/event pages */
+#countdown {
+  font-family: 'Proxima-Nova' !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: .5em;
+  float: left;
+  background: white;
+  color: #26282A;
+  padding: 1px 20px;
+  border-radius: 30px;
+}
+
+.accordion-item__description a {
+  color: #019CDA !important;
+}
+
+/* NOTE: Squarespace renders editor strikethrough as inline style="text-decoration: line-through".
+   This intercepts that to replace it with a custom faded/small-caps look instead.
+   If Squarespace changes how strikethrough is output, this rule will silently stop working. */
+span[style*="line-through"] {
+  text-decoration: none !important;
+  opacity: 0.5;
+  font-family: 'Proxima-Nova' !important;
+  font-weight: 600 !important;
+  font-size: .6em;
+  text-transform: uppercase;
+  letter-spacing: 1px !important;
+}
