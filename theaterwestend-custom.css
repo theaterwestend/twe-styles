@@ -16,7 +16,8 @@
    10. User Item Lists
    11. Announcement Bar
    12. Floating Button
-   13. Utilities
+   13. Search Field
+   14. Utilities
    ============================================================ */
 
 
@@ -677,7 +678,65 @@ blockquote {
 
 
 /* ============================================================
-   13. UTILITIES
+   13. SEARCH FIELD
+   ============================================================ */
+
+/* Input — covers both the sqs-search-ui and generic input[type=search] patterns */
+.sqs-search-ui-query-field,
+.sqs-search-ui input[type="search"],
+input.sqs-search-ui-query-field,
+.search-block input[type="search"],
+input[type="search"] {
+  font-family: 'Proxima-Nova', 'Proxima Nova', Montserrat, system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  color: #F5EFE6 !important;
+  background: rgba(245, 239, 230, 0.07) !important;
+  border: 1px solid rgba(245, 239, 230, 0.22) !important;
+  border-radius: 999px !important;
+  padding: 10px 20px 10px 40px !important;
+  outline: none !important;
+  transition: border-color 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              background 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.sqs-search-ui-query-field::placeholder,
+.sqs-search-ui input[type="search"]::placeholder,
+.search-block input[type="search"]::placeholder,
+input[type="search"]::placeholder {
+  color: rgba(245, 239, 230, 0.38) !important;
+  font-weight: 400 !important;
+}
+
+.sqs-search-ui-query-field:focus,
+.sqs-search-ui input[type="search"]:focus,
+.search-block input[type="search"]:focus,
+input[type="search"]:focus {
+  border-color: #FFE900 !important;
+  background: rgba(245, 239, 230, 0.1) !important;
+}
+
+/* Search icon — SVG fill/stroke override */
+.sqs-search-ui-input-icon svg,
+.sqs-search-ui-input-icon svg path,
+.sqs-search-ui-input-icon svg circle {
+  stroke: rgba(245, 239, 230, 0.45) !important;
+  fill: none !important;
+  transition: stroke 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+
+.sqs-search-ui:focus-within .sqs-search-ui-input-icon svg,
+.sqs-search-ui:focus-within .sqs-search-ui-input-icon svg path,
+.sqs-search-ui:focus-within .sqs-search-ui-input-icon svg circle {
+  stroke: #FFE900 !important;
+}
+
+
+/* ============================================================
+   14. UTILITIES
    ============================================================ */
 
 /* Countdown widget — used in show/event pages */
