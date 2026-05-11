@@ -7,15 +7,16 @@
     1. Fonts
     2. Base Typography
     3. Navigation
-    4. Event Pages
-    5. Show Listings / Menu
-    6. Gallery & Captions
-    7. Summary Blocks
-    8. Quote Blocks
-    9. User Item Lists
-   10. Announcement Bar
-   11. Floating Button
-   12. Utilities
+    4. Buttons
+    5. Event Pages
+    6. Show Listings / Menu
+    7. Gallery & Captions
+    8. Summary Blocks
+    9. Quote Blocks
+   10. User Item Lists
+   11. Announcement Bar
+   12. Floating Button
+   13. Utilities
    ============================================================ */
 
 
@@ -173,7 +174,57 @@ blockquote {
 
 
 /* ============================================================
-   4. EVENT PAGES
+   4. BUTTONS
+   ============================================================ */
+
+/* Squarespace button blocks — primary (Get Tickets, etc.)
+   Targets both the generic element and the explicit --primary variant. */
+.sqs-block-button-element,
+.sqs-block-button-element--primary {
+  font-family: 'Proxima-Nova' !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  background: #FFE900 !important;
+  color: #26282A !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 14px 28px !important;
+  cursor: pointer;
+  transition: background 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+
+.sqs-block-button-element:hover,
+.sqs-block-button-element--primary:hover {
+  background: #FFF28A !important;
+}
+
+/* Secondary / outline button */
+.sqs-block-button-element--secondary {
+  font-family: 'Proxima-Nova' !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  background: transparent !important;
+  color: #F5EFE6 !important;
+  border: 1px solid rgba(245, 239, 230, 0.55) !important;
+  border-radius: 999px !important;
+  padding: 14px 28px !important;
+  cursor: pointer;
+  transition: border-color 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              color 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+
+.sqs-block-button-element--secondary:hover {
+  border-color: rgba(245, 239, 230, 0.9) !important;
+  color: #FFFFFF !important;
+}
+
+
+/* ============================================================
+   5. EVENT PAGES
    ============================================================ */
 
 /* Event list (index / calendar view) */
@@ -230,7 +281,7 @@ blockquote {
 
 
 /* ============================================================
-   5. SHOW LISTINGS / MENU
+   6. SHOW LISTINGS / MENU
    ============================================================ */
 
 .menu-block .menu-item {
@@ -269,7 +320,7 @@ blockquote {
 
 
 /* ============================================================
-   6. GALLERY & CAPTIONS
+   7. GALLERY & CAPTIONS
    ============================================================ */
 
 /* Rounded corners — 10px on standard thumbnails */
@@ -335,7 +386,7 @@ blockquote {
 
 
 /* ============================================================
-   7. SUMMARY BLOCKS
+   8. SUMMARY BLOCKS
    ============================================================ */
 
 .summary-header-text {
@@ -349,7 +400,7 @@ blockquote {
 
 
 /* ============================================================
-   8. QUOTE BLOCKS
+   9. QUOTE BLOCKS
    ============================================================ */
 
 /* Generic blockquote — dark card style (base rule is in Section 2) */
@@ -412,7 +463,7 @@ blockquote {
 
 
 /* ============================================================
-   9. USER ITEM LISTS
+   10. USER ITEM LISTS
    ============================================================ */
 
 .user-items-list .list-section-title p {
@@ -448,7 +499,7 @@ blockquote {
 
 
 /* ============================================================
-   10. ANNOUNCEMENT BAR
+   11. ANNOUNCEMENT BAR
    ============================================================ */
 
 .sqs-announcement-bar {
@@ -518,7 +569,7 @@ blockquote {
 
 
 /* ============================================================
-   11. FLOATING BUTTON (fixed bottom CTA bar)
+   12. FLOATING BUTTON (fixed bottom CTA bar)
    ============================================================ */
 
 @keyframes twe-float-in {
@@ -539,12 +590,12 @@ blockquote {
 
 #floating-button a {
   background: #FFE900;
-  color: #44494B;
+  color: #26282A;
   font-size: 0.75em;
   text-transform: uppercase;
   font-family: 'Proxima-Nova' !important;
   font-weight: 600 !important;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.2em;
   border-radius: 0;
   line-height: 0.7;
   display: block;
@@ -563,7 +614,7 @@ blockquote {
   margin: 0 auto;
   font-size: 0.7em;
   letter-spacing: 0;
-  color: #44494B;
+  color: #26282A;
   text-transform: uppercase;
   display: block;
   line-height: .9;
@@ -573,7 +624,7 @@ blockquote {
 
 
 /* ============================================================
-   12. UTILITIES
+   13. UTILITIES
    ============================================================ */
 
 /* Countdown widget — used in show/event pages */
@@ -581,13 +632,13 @@ blockquote {
   font-family: 'Proxima-Nova' !important;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 0.22em;
   font-size: .5em;
   float: left;
   background: white;
   color: #26282A;
-  padding: 1px 20px;
-  border-radius: 30px;
+  padding: 4px 18px;
+  border-radius: 999px;
 }
 
 .accordion-item__description a {
