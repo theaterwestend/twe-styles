@@ -299,6 +299,10 @@ blockquote {
 }
 
 /* Event detail page title */
+.eventlist-title {
+  font-size: 0.8em !important;
+}
+
 .eventitem-title {
   font-family: 'Eighties-Light-X';
   font-weight: 100;
