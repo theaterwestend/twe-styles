@@ -299,6 +299,32 @@ blockquote {
 }
 
 /* Event detail page title */
+.eventlist-column-thumbnail {
+  position: relative !important;
+}
+
+.twe-event-type-pill {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'Proxima Nova', 'Proxima-Nova', Montserrat, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #F5EFE6;
+  border: 1px solid rgba(245, 239, 230, 0.25);
+}
+
 .eventlist-title {
   font-size: 0.9em !important;
 }
