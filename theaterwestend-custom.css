@@ -133,9 +133,11 @@ blockquote {
 
 .header-nav-list > div {
   font-family: 'Proxima-Nova' !important;
-  font-size: .7em;
+  font-size: .65em;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px !important;
+  opacity: 85%;
 }
 
 /* Dropdown folder menus */
