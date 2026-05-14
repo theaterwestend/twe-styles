@@ -142,21 +142,55 @@ blockquote {
 
 /* Dropdown folder menus */
 .header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content {
-  letter-spacing: 1px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  margin-top: 0px;
-  border-radius: 20px;
-  max-height: 0;
+  padding: 0;
+  margin-top: 2px;
+  border-radius: 12px;
+  border: 1px solid rgba(245, 239, 230, 0.1);
+  border-top: 2px solid #FFE900;
+  background-color: rgba(26, 28, 30, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   overflow: hidden;
-  transition: max-height 0.3s ease; /* was 2s — too slow for a nav dropdown */
-  background-color: rgba(0, 0, 0, 0.2); /* 20% dark overlay */
-  backdrop-filter: blur(5px);
+  /* Animation start state */
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition:
+    opacity 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    max-height 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content {
-  max-height: 500px;
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+.header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content a {
+  display: block !important;
+  font-family: 'Proxima-Nova', Montserrat, system-ui, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: rgba(245, 239, 230, 0.7) !important;
+  padding: 11px 20px !important;
+  border-bottom: 1px solid rgba(245, 239, 230, 0.06) !important;
+  transition: color 140ms cubic-bezier(0.2, 0.7, 0.2, 1),
+              background 140ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+
+.header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content a:last-child {
+  border-bottom: none !important;
+}
+
+.header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content a:hover {
+  color: #FFE900 !important;
+  background: rgba(255, 233, 0, 0.05) !important;
 }
 
 /* Mobile / hamburger menu */
