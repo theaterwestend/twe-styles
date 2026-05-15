@@ -137,7 +137,19 @@ blockquote {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px !important;
-  opacity: 85%;
+  color: rgba(245, 239, 230, 0.85);
+  transition: color 160ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
+}
+
+.header-nav-list > div:hover,
+.header-nav-list > div a:hover {
+  color: #FFE900 !important;
+}
+
+/* Ensure nav links inherit the transition and colour */
+.header-nav-list > div a {
+  color: inherit !important;
+  transition: color 160ms cubic-bezier(0.2, 0.7, 0.2, 1) !important;
 }
 
 /* Dropdown folder menus */
@@ -171,28 +183,25 @@ blockquote {
   border-radius: 12px;
   border: 1px solid rgba(245, 239, 230, 0.1);
   border-top: 1px solid #FFE900;
-  /* Semi-transparent so the blur shows through */
   background-color: rgba(22, 24, 26, 0.96);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   overflow: hidden;
-  /* Note: isolation and transform on this element are intentionally omitted —
-     both can break backdrop-filter in certain stacking contexts */
   /* Animation start state */
   max-height: 0;
   opacity: 0;
-  transform: translateY(-6px);
   pointer-events: none;
+  /* max-height drives the reveal; opacity cascades in 80ms later so it
+     reads as a two-part motion even if transform is blocked by SQS JS.
+     !important ensures Squarespace doesn't overwrite these. */
   transition:
-    opacity 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
-    max-height 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+    max-height 380ms cubic-bezier(0.0, 0.0, 0.2, 1) !important,
+    opacity 220ms cubic-bezier(0.2, 0.7, 0.2, 1) 80ms !important;
 }
 
 .header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content {
   max-height: 400px;
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 
