@@ -438,9 +438,10 @@ blockquote {
 
 /* "Next / Previous" event pagination */
 
-/* Row layout — top-align arrow with text block */
+/* Row layout — top-align arrow with text block, tighter gap */
 .item-pagination-link {
   align-items: flex-start !important;
+  gap: 10px !important;
 }
 
 /* Smaller arrow icons */
@@ -470,8 +471,8 @@ blockquote {
 /* Title — slightly smaller, max 2 lines with ellipsis */
 .item-pagination-title {
   font-size: .65em !important;
-  line-height: 1.3 !important;
-  margin: 0 !important;
+  line-height: 1.15 !important;
+  margin: 0 0 12px !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
