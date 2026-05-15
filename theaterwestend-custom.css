@@ -479,6 +479,13 @@ blockquote {
   border-radius: 10px;
 }
 
+/* Clip the container so the image actually conforms to the rounded corners */
+.sqs-block-summary-v2 .summary-thumbnail-container,
+.sqs-block-summary-v2 .summary-thumbnail {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
 /* Rounded corners — 15px on gallery block slides and list item media */
 .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
 .user-items-list-simple .list-item-media-inner:not([data-aspect-ratio="original"]) .list-image {
