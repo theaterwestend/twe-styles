@@ -588,6 +588,40 @@ blockquote {
   color: #babfc0 !important;
 }
 
+/* Carousel date badge — dark circle */
+.summary-thumbnail-date {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  background: rgba(30, 32, 34, 0.88) !important;
+  border: none !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.summary-thumbnail-date-month {
+  font-family: 'Proxima-Nova', Montserrat, system-ui, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: rgba(245, 239, 230, 0.75) !important;
+  margin-bottom: 2px !important;
+}
+
+.summary-thumbnail-date-day {
+  font-family: 'Proxima-Nova', Montserrat, system-ui, sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #F5EFE6 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1 !important;
+}
+
 
 /* ============================================================
    9. QUOTE BLOCKS
