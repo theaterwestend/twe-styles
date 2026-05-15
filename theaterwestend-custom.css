@@ -437,17 +437,46 @@ blockquote {
 }
 
 /* "Next / Previous" event pagination */
-.item-pagination-title {
-  font-size: .7em !important;
+
+/* Row layout — top-align arrow with text block */
+.item-pagination-link {
+  align-items: flex-start !important;
 }
 
+/* Smaller arrow icons */
+.item-pagination-icon {
+  width: 18px !important;
+  height: 18px !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important; /* optically aligns with first line of text */
+}
+
+.item-pagination-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Date — slightly smaller, top-aligned */
 .events-item-pagination-date {
   font-family: 'Eighties-CondBold' !important;
-  font-size: .8em !important;
+  font-size: .75em !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
-  margin-bottom: 0rem !important;
+  margin-bottom: 0 !important;
+  line-height: 1.1 !important;
   color: #039cda !important;
+}
+
+/* Title — slightly smaller, max 2 lines with ellipsis */
+.item-pagination-title {
+  font-size: .65em !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .eventitem-backlink {
