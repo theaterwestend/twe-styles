@@ -614,7 +614,7 @@ blockquote {
   letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
   color: rgba(245, 239, 230, 0.75) !important;
-  margin-bottom: 2px !important;
+  margin-bottom: -2px !important;
 }
 
 .summary-thumbnail-event-date-day {
