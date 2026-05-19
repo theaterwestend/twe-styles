@@ -286,6 +286,7 @@ blockquote {
   font-family: 'Proxima-Nova' !important;
   font-weight: 600 !important;
   font-size: 13px !important;
+  line-height: 1 !important;
   letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
   background: #FFE900 !important;
@@ -309,6 +310,7 @@ blockquote {
   font-family: 'Proxima-Nova' !important;
   font-weight: 900 !important;
   font-size: 11px !important;
+  line-height: 1 !important;
   letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
   background: rgba(38, 40, 42, 0.75) !important;
