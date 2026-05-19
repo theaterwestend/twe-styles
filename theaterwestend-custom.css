@@ -290,7 +290,7 @@ blockquote {
   text-transform: uppercase !important;
   background: #FFE900 !important;
   color: #26282A !important;
-  border: none !important;
+  border: 1px solid #C9B800 !important;
   border-radius: 999px !important;
   padding: 14px 28px !important;
   cursor: pointer;
