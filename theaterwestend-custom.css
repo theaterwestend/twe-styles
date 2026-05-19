@@ -763,6 +763,14 @@ blockquote {
   display: none;
 }
 
+/* Card style — rounded corners + semi-transparent dark background.
+   overflow: hidden clips the image to the rounded corners. */
+.list-item[data-is-card-enabled="true"] {
+  border-radius: 20px !important;
+  background-color: rgba(26, 28, 30, 0.82) !important;
+  overflow: hidden !important;
+}
+
 
 /* ============================================================
    11. ANNOUNCEMENT BAR
