@@ -767,7 +767,7 @@ blockquote {
    overflow: hidden clips the image to the rounded corners. */
 .list-item[data-is-card-enabled="true"] {
   border-radius: 20px !important;
-  background-color: rgba(26, 28, 30, 0.82) !important;
+  background-color: rgba(255, 255, 255, 0.88) !important;
   overflow: hidden !important;
 }
 
