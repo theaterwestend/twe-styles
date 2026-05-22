@@ -784,10 +784,11 @@ blockquote {
   overflow: hidden;
   background: linear-gradient(
     120deg,
-    #4B2D82 0%,   /* deep violet */
-    #9B3A5E 35%,  /* dusty rose */
-    #2D6B4A 65%,  /* sage green */
-    #8B6220 100%  /* amber */
+    #0D9DAC 0%,   /* teal */
+    #E03E7A 28%,  /* hot pink */
+    #E86828 55%,  /* orange */
+    #E8BC18 78%,  /* yellow */
+    #2E62C0 100%  /* cobalt blue */
   );
   background-size: 300% 300%;
   animation: redDrift 18s ease-in-out infinite;
