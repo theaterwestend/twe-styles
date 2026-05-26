@@ -728,6 +728,19 @@ blockquote {
 }
 
 
+/* Blockquote label — first <strong> in each paragraph styled as a muted
+   uppercase label (e.g. "NOTE:" / "CONTENT ADVISORY:").
+   Requires the label to be its own <strong> tag, separate from any
+   subsequent bold text in the same paragraph. */
+blockquote p strong:first-child {
+  font-family: 'Proxima-Nova', 'Proxima Nova', Montserrat, system-ui, sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #666562 !important;
+  font-weight: 700 !important;
+}
+
+
 /* ============================================================
    9. QUOTE BLOCKS
    ============================================================ */
