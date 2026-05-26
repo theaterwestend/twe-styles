@@ -739,6 +739,7 @@ blockquote p strong:first-child {
   font-size: 0.9em !important;
   color: #a09e97 !important;
   font-weight: 700 !important;
+  padding-right: 3px !important;
 }
 
 
