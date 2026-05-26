@@ -488,6 +488,7 @@ blockquote {
 
 .eventlist-title {
   font-size: 0.9em !important;
+  margin-bottom: 0 !important;
 }
 
 .eventitem-title {
