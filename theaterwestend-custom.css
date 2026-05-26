@@ -634,6 +634,12 @@ blockquote {
   border-radius: 20px;
 }
 
+/* Rounded corners — 20px on fluid image blocks (image block component) */
+.sqs-block-image .fluid-image-container {
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
 /* Gallery strip captions — formatted as two halves split by "|" character.
    Left side (.before-pipe) = blue/bold label; right side (.after-pipe) = light text.
    Requires custom JavaScript to split the caption text and wrap each half. */
