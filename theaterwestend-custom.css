@@ -206,7 +206,7 @@ blockquote {
 .header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content {
   padding: 0;
   margin-top: 12px;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid rgba(245, 239, 230, 0.1);
   border-top: 1px solid #FFE900;
   background-color: rgba(22, 24, 26, 0.96);
@@ -625,7 +625,7 @@ blockquote {
 /* Rounded corners — 15px on gallery block slides and list item media */
 .sqs-gallery-block-grid .slide .margin-wrapper a.image-slide-anchor,
 .user-items-list-simple .list-item-media-inner:not([data-aspect-ratio="original"]) .list-image {
-  border-radius: 15px;
+  border-radius: 20px;
 }
 
 /* Rounded corners — 20px on event detail header image */
