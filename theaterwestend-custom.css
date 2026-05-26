@@ -322,14 +322,11 @@ blockquote {
   background-color: #26282A;
 }
 
-/* Mobile menu close (×) button — match nav text color */
-.header-menu-close-btn,
-.header-menu-close-btn svg,
-.header-menu-close-btn path,
-.header-menu-close-btn line {
-  color: rgba(245, 239, 230, 0.85) !important;
-  stroke: rgba(245, 239, 230, 0.85) !important;
-  fill: rgba(245, 239, 230, 0.85) !important;
+/* Hamburger / close (×) button lines — div-based, so background-color controls color */
+.burger-inner .top-bun,
+.burger-inner .patty,
+.burger-inner .bottom-bun {
+  background-color: rgba(245, 239, 230, 0.85) !important;
 }
 
 
