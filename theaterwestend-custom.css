@@ -1038,6 +1038,11 @@ input[type="search"]:focus {
    14. UTILITIES
    ============================================================ */
 
+/* Offset anchor scroll targets so the sticky header doesn't cover them */
+html {
+  scroll-padding-top: 80px;
+}
+
 /* Countdown widget — used in show/event pages */
 #countdown {
   font-family: 'Proxima-Nova' !important;
