@@ -251,9 +251,12 @@ blockquote {
      animation script leaves on nav elements */
   transform: translateY(-10px) scale(0.94) !important;
   transform-origin: top center !important;
+  /* NOTE: !important goes once at the END of the declaration — placing it
+     after each comma-separated item is invalid and silently drops the
+     whole declaration */
   transition:
-    max-height 300ms cubic-bezier(0.0, 0.0, 0.2, 1) !important,
-    opacity 200ms cubic-bezier(0.2, 0.7, 0.2, 1) !important,
+    max-height 300ms cubic-bezier(0.0, 0.0, 0.2, 1),
+    opacity 200ms cubic-bezier(0.2, 0.7, 0.2, 1),
     transform 450ms cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
