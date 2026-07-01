@@ -247,8 +247,10 @@ blockquote {
   max-height: 0;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(-10px) scale(0.94);
-  transform-origin: top center;
+  /* !important beats the inline transform Squarespace's header-element
+     animation script leaves on nav elements */
+  transform: translateY(-10px) scale(0.94) !important;
+  transform-origin: top center !important;
   transition:
     max-height 300ms cubic-bezier(0.0, 0.0, 0.2, 1) !important,
     opacity 200ms cubic-bezier(0.2, 0.7, 0.2, 1) !important,
@@ -274,7 +276,7 @@ blockquote {
   max-height: 400px;
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1) !important;
 }
 
 /* Dropdown links */
