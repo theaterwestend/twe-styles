@@ -203,15 +203,37 @@ blockquote {
   height: 12px; /* matches margin-top below */
 }
 
+/* Liquid glass panel — layered gradients fake the glass (sheen + rim light)
+   so it reads as glass even where backdrop-filter is blocked by the sticky
+   header's transform; the blur is declared optimistically and simply adds
+   frost wherever the browser lets it through. */
 .header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content {
   padding: 0;
   margin-top: 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(245, 239, 230, 0.1);
-  border-top: 1px solid #FFE900;
-  background-color: rgba(22, 24, 26, 0.96);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    /* specular sheen — diagonal light streak across the surface */
+    linear-gradient(115deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.05) 30%,
+      rgba(255, 255, 255, 0.00) 46%,
+      rgba(255, 255, 255, 0.00) 68%,
+      rgba(255, 255, 255, 0.06) 100%),
+    /* smoky translucent base — readable even with no blur behind */
+    linear-gradient(180deg,
+      rgba(30, 32, 36, 0.82) 0%,
+      rgba(22, 24, 28, 0.86) 100%);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow:
+    /* rim light along the top edge */
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px 0 0 rgba(255, 255, 255, 0.06),
+    /* lift */
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   /* Animation start state */
   max-height: 0;
@@ -223,6 +245,20 @@ blockquote {
   transition:
     max-height 380ms cubic-bezier(0.0, 0.0, 0.2, 1) !important,
     opacity 220ms cubic-bezier(0.2, 0.7, 0.2, 1) 80ms !important;
+}
+
+/* Gold accent — soft glowing line that fades at the edges */
+.header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 233, 0, 0.9) 25%,
+    #FFE900 50%,
+    rgba(255, 233, 0, 0.9) 75%,
+    transparent 100%);
+  box-shadow: 0 0 8px rgba(255, 233, 0, 0.5);
 }
 
 .header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content {
