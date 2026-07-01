@@ -208,6 +208,11 @@ blockquote {
    header's transform; the blur is declared optimistically and simply adds
    frost wherever the browser lets it through. */
 .header .header-layout-nav-right .header-nav .header-nav-item--folder .header-nav-folder-content {
+  /* Squarespace toggles display:none→block on hover, which kills ALL CSS
+     transitions (properties jump straight to final values on a freshly
+     rendered element). Keep it always-rendered; our max-height/opacity/
+     pointer-events handle the hiding instead. */
+  display: block !important;
   padding: 0;
   margin-top: 12px;
   border-radius: 16px;
@@ -264,7 +269,8 @@ blockquote {
   box-shadow: 0 0 8px rgba(255, 233, 0, 0.5);
 }
 
-.header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content {
+.header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content,
+.header .header-layout-nav-right .header-nav .header-nav-item--folder button.header-nav-folder-title[aria-expanded="true"] + .header-nav-folder-content {
   max-height: 400px;
   opacity: 1;
   pointer-events: auto;
@@ -292,7 +298,8 @@ blockquote {
               transform 320ms cubic-bezier(0.34, 1.4, 0.64, 1) !important;
 }
 
-.header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content a {
+.header .header-layout-nav-right .header-nav .header-nav-item--folder:hover .header-nav-folder-content a,
+.header .header-layout-nav-right .header-nav .header-nav-item--folder button.header-nav-folder-title[aria-expanded="true"] + .header-nav-folder-content a {
   opacity: 1;
   transform: translateY(0);
 }
