@@ -369,7 +369,7 @@ blockquote {
   font-family: 'Proxima-Nova' !important;
   color: white !important;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
   letter-spacing: 5px;
   font-size: .9em;
   line-height: initial;
