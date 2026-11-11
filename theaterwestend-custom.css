@@ -415,6 +415,22 @@ blockquote {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* In-between widths (desktop nav, but cramped): the nav can wrap to two
+   rows, and the pill's negative margin would let the rows overlap. Give
+   the margin back and slim the pill so wrapped rows stack cleanly. */
+@media (max-width: 1100px) and (min-width: 768px) {
+  .header-nav-item a[href="/holidays"] {
+    margin: 0;
+    padding: .35em .8em .35em .95em;
+  }
+  .header-nav-item a[href="/holidays"]::before {
+    top: -5px;
+    right: -4px;
+    width: 13px;
+    height: 13px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .header-nav-item a[href="/holidays"] { animation: none; }
   .header-nav-item a[href="/holidays"]::before { animation: none; transform: scale(1); }
