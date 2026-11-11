@@ -375,9 +375,14 @@ blockquote {
 }
 .header-nav-item a[href="/holidays"] {
   position: relative;
-  display: inline-block;
-  padding: .5em 1.05em .5em 1.25em;
-  margin: -.5em 0;
+  /* flex + line-height 1 centers the text exactly; extra left padding
+     offsets the trailing gap letter-spacing adds after the last letter */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1 !important;
+  padding: .4em 1.05em .4em 1.25em;
+  margin: -.4em 0;
   border-radius: 999px;
   color: #F2FFF7 !important;
   background-image:
